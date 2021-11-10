@@ -40,6 +40,7 @@ html{
   background-color: transparent;
   position: relative;
   border-radius: 6px;
+  width: max-content;
   margin: 10px;
   padding: 10px;
   overflow: hidden;
@@ -57,7 +58,7 @@ html{
   visibility: hidden;
   height:100%;
   border-radius: 6px;
-  width: 100%;
+  width: auto;
   font-size: 0;
   position: absolute;
   left: 0;
@@ -85,8 +86,8 @@ div#first-section{
 #stock-graph{
   margin: 10px;
   border-radius: 6px;
-  height: 400px;
-  width: 500px;
+  height: 40%;
+  width:40%;
   
 }
 #open-menu{
@@ -98,7 +99,8 @@ div#first-section{
 
 div#first-section span h1{
 font-size: 50px;
-width: 500px;
+width: auto;
+max-width:500px;
 }
 div#first-section span{
   margin-left: 50px;
@@ -176,12 +178,43 @@ div.quotes img{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transform: translateX(-300px);
     transition: all 200ms ease;
+    text-align: center;
   }
+  #navbar ul li{
+margin-left: -30px;
+ }
+  
   #open-menu{
     display:block;
   }
   #open-menu:focus ~ ul{
    transform: translateX(0px);
    }
+   #navbar{
+     width: 99.2%;
+   }
+   div#first-section span h1{
+     font-size: 30px;
+   }
+}
+@media only screen and (max-width: 965px){
+  #stock-graph{
+    height: 80%;
+    width: 80%;
+  }
+  div#first-section{
+    align-items: center;
+    justify-content: center;
+  }
 }
 
+
+
+.feature{
+  display: flex;
+  flex-wrap: wrap;
+}
+.feature img{
+  height: 30%;
+  width: 30%;
+}
