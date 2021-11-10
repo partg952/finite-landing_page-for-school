@@ -91,6 +91,9 @@ div#first-section{
 }
 #open-menu{
   display: none;
+  background-color: transparent;
+  border: 0;
+  outline: none;
 }
 
 div#first-section span h1{
