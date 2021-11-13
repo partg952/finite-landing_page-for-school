@@ -27,22 +27,22 @@
             </button>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <a href="#"> <b>Home</b> </a>
           <br>
           <span>placeholder</span>
         </li>
         <li>
-          <a href="#about-us">About Us</a>
+          <a href="#about-us"><b>About Us</b></a>
           <br>
           <span>placeholder</span>
         </li>
         <li>
-          <a href="#famous-stocks">Our Best Performing Stocks</a>
+          <a href="#famous-stocks"><b>Our Best Performing Stocks</b></a>
           <br>
           <span>placeholder</span>
         </li>
         <li>
-          <a href="#quotes-container">Quotes by great Personalities</a>
+          <a href="#quotes-container"><b>Quotes by great Personalities</b></a>
           <br>
           <span>placeholder</span>
         </li>
@@ -92,14 +92,31 @@
       
     </div>
     <hr>
+    <div id="user-info">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Cancel_Icon.svg" id='cancel-button' alt="">
+      <form action="" id='user-form'>
+        <h4>Please Enter the your Info</h4>
+        <input type="text" name="name" id="" placeholder="Enter the your name....">
+       
+      <input type="text" name="email" id="" placeholder="Enter the your email....">
+      
+      <input type="number" name="number" id="" placeholder="Enter the your number....">
+      
+      <input type="number" name="amount" id="" placeholder="Enter the your initial amount....">
+      <br>
+      <button type="submit">Submit</button>
+      <br>
+      <p></p>
+    </form>
+    </div>
     <h1 style="text-align: center;">Some Of  Best Performing Stocks On Our Platform</h1>
     <div id="famous-stocks">
-      <div class="stocks">
+      <div class="stocks" onclick="gotopage('AMD')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/AMD_Logo.png" style="height: 30px; margin: 20px;" alt="">
         <h3>Advanced Micro Devices(AMD)</h3>
         <p>100% YTD Returns</p>
       </div>
-      <div class="stocks">
+      <div class="stocks" onclick="gotopage('NIO')">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Nio_2020_Logo.svg/1200px-Nio_2020_Logo.svg.png" style="height: 30px; margin: 20px;" alt="">
         <h3>Nio Limited(NIO)</h3>
         <p>1112% YTD Returns</p>
@@ -130,4 +147,5 @@
     </div>
   </body>
   <script src="main.js" type="text/Javascript"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>

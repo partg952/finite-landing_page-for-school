@@ -1,3 +1,4 @@
+
 const stocks_data = [
   {
     name:'Tesla',
@@ -63,6 +64,31 @@ const stocks_data = [
 let stocks_div = document.getElementById("famous-stocks");
 let navbar = document.getElementById('navbar');
 let heading = document.getElementById("heading");
+let form = document.getElementById('user-form');
+let message = document.querySelector('#user-form > p');
+let user_div = document.getElementById("user-info")
+let cancel_button = document.getElementById("cancel-button");
+
+setTimeout(()=>{
+  user_div.style.transform = 'translateY(0px)'
+},5000);
+
+cancel_button.addEventListener('click',()=>{
+  user_div.style.transform = 'translateY(-600px)'
+})
+
+form.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  axios.post("https://finite-api.herokuapp.com/add-user",{
+    name:e.target.name.value,
+    email:e.target.email.value.replace("@gmail.com",""),
+    phone:e.target.number.value,
+    amount:e.target.amount.value
+  }).then(res=>{
+    console.log("posted")
+    message.textContent = 'Your Info Has Been Posted';
+  })
+})
 window.onscroll = () =>{
   if(window.scrollY >= 20){
    navbar.classList.add("nav-colored")
@@ -77,6 +103,9 @@ window.onscroll = () =>{
 }
 stocks_data.forEach(items=>{
 let stocks = document.createElement('div');
+stocks.onclick = () =>{
+  gotopage(items.code);
+}
 stocks.innerHTML = `
 <img src="${items.image}" style="height:${items.image_dimensions}; width:${items.image_dimensions};"/>
 <h3>${items.name}(${items.code})</h3>
@@ -84,3 +113,9 @@ stocks.innerHTML = `
 `
 stocks_div.appendChild(stocks);
 })
+
+function gotopage(e){
+  localStorage.setItem('code',e);
+  console.log(localStorage.getItem('code'));
+  window.location.href = 'stocks.html';
+}
