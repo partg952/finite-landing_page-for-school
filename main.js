@@ -154,6 +154,6 @@ function gotopage(e){
 
 
 
-document.getElementById("bring-popup").onclick = () =>{
-  user_div.style.transform = 'translateY(0px)';
+document.getElementById("bring-popup").onfocus = () =>{
+  user_div.style.transform = 'translate(0)';
 }

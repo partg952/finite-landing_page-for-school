@@ -203,8 +203,8 @@ div.quotes img{
   border-radius: 6px;
   margin: 10px;
 }
-@media only screen and (max-width: 880px){
-	#navbar ul{
+@media only screen and (max-width: 1095px){
+#parent-nav	#navbar ul{
     display: block;
     position: fixed;
     left: 0;
@@ -218,17 +218,17 @@ div.quotes img{
     transition: all 200ms ease;
     text-align: center;
   }
-  #navbar ul li{
+ #parent-nav #navbar ul li,button{
 margin-left: -30px;
  }
   
   #open-menu{
     display:block;
   }
-  #open-menu:focus ~ ul{
+  #parent-nav #navbar #open-menu:focus ~ ul{
    transform: translateX(0px);
    }
-   #navbar{
+  #parent-nav #navbar{
      width: 99.2%;
    }
    div#first-section span h1{
@@ -334,7 +334,12 @@ hr{
   margin: 0;
   
 }
-
+/* 
 #bring-popup:focus #user-info {
   transform: translateY(0px); 
-} 
+}  */
+#bring-popup{
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
