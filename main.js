@@ -103,7 +103,7 @@ form.addEventListener('submit',(e)=>{
   e.preventDefault();
   if(e.target.name.value.length!=0 && e.target.email.value.length!=0 && e.target.number.value.length!=0 && e.target.amount.value.length!=0){
 
-    axios.post("http://localhost:9000/add-user",{
+    axios.post("https://finite-api.herokuapp.com/add-user",{
       name:e.target.name.value,
       email:e.target.email.value.replace("@gmail.com",""),
       phone:e.target.number.value,
