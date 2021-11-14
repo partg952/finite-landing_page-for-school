@@ -1,0 +1,24 @@
+#stock-image{
+    width: 300px;
+    height: 300px;
+    float: left;
+    object-fit: contain;
+}
+
+body{
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+#first{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#first span{
+    text-align: center;
+    /* background-color: red; */
+    width: 50%;
+    height: 100%;
+}

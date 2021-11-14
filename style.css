@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(253, 253, 22);
+  background-color: rgb(250, 250, 28);
   font-family: 'Fira Sans', sans-serif;
   user-select: none;
   z-index: 1;
@@ -271,6 +271,7 @@ hr{
   align-items: center;
   justify-content: center;
   z-index: 99999999;
+  padding: 5px;
 }
 
 #user-info input{

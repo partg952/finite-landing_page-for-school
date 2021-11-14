@@ -1,4 +1,6 @@
 
+
+
 const stocks_data = [
   {
     name:'Tesla',
@@ -69,6 +71,21 @@ let message = document.querySelector('#user-form > p');
 let user_div = document.getElementById("user-info")
 let cancel_button = document.getElementById("cancel-button");
 
+window.onload = () =>{
+  axios("http://finite-api.herokuapp.com/get-count").then(res=>{
+  console.log(res.data);
+  document.getElementById("visitors-text").textContent = "Number of people visited the site: "+res.data[res.data.length-1].count;
+  if(localStorage.getItem('first_visit')==undefined){
+    localStorage.setItem("first_visit",true);
+    axios("http://finite-api.herokuapp.com/increase-count?num="+res.data[res.data.length-1].count+1).then(response=>{
+      console.log(response.data);
+    })
+  }
+  
+})
+}
+
+
 setTimeout(()=>{
   user_div.style.transform = 'translateY(0px)'
 },5000);
@@ -81,14 +98,17 @@ form.addEventListener('submit',(e)=>{
   e.preventDefault();
   if(e.target.name.value.length!=0 && e.target.email.value.length!=0 && e.target.number.value.length!=0 && e.target.amount.value.length!=0){
 
-    axios.post("https://finite-api.herokuapp.com/add-user",{
+    axios.post("http://finite-api.herokuapp.com/add-user",{
       name:e.target.name.value,
       email:e.target.email.value.replace("@gmail.com",""),
       phone:e.target.number.value,
       amount:e.target.amount.value
     }).then(res=>{
       console.log("posted")
-      user_div.style.transform = 'translateY(-600px)'
+      message.textContent = 'Please Check Your Inbox'
+      setTimeout(()=>{
+        user_div.style.transform = 'translateY(-600px)'
+      },3000)
     })
   }
   else{
@@ -125,3 +145,4 @@ function gotopage(e){
   console.log(localStorage.getItem('code'));
   window.location.href = 'stocks.html';
 }
+
