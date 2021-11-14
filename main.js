@@ -86,9 +86,13 @@ window.onload = () =>{
 }
 
 
-setTimeout(()=>{
-  user_div.style.transform = 'translateY(0px)'
-},5000);
+
+if(sessionStorage.getItem("bring-popup") == undefined){
+  sessionStorage.setItem("bring-popup",true)
+  setTimeout(()=>{
+    user_div.style.transform = 'translateY(0px)'
+  },5000);
+}
 
 cancel_button.addEventListener('click',()=>{
   user_div.style.transform = 'translateY(-600px)'
@@ -98,7 +102,7 @@ form.addEventListener('submit',(e)=>{
   e.preventDefault();
   if(e.target.name.value.length!=0 && e.target.email.value.length!=0 && e.target.number.value.length!=0 && e.target.amount.value.length!=0){
 
-    axios.post("http://finite-api.herokuapp.com/add-user",{
+    axios.post("http://localhost:9000/add-user",{
       name:e.target.name.value,
       email:e.target.email.value.replace("@gmail.com",""),
       phone:e.target.number.value,
@@ -106,6 +110,7 @@ form.addEventListener('submit',(e)=>{
     }).then(res=>{
       console.log("posted")
       message.textContent = 'Please Check Your Inbox'
+      
       setTimeout(()=>{
         user_div.style.transform = 'translateY(-600px)'
       },3000)

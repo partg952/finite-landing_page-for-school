@@ -27,13 +27,17 @@ html{
   width: 100%;
   /* background-color: yellow; */
   transition: all 200ms ease;
+  
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+#parent-nav{
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
 #navbar ul {
@@ -88,7 +92,8 @@ html{
   color: orange;
 }
 #navbar p{
-margin: 0;
+margin-top: -10px;
+padding: 5px;
 color: orange;
 }
 div#first-section{
@@ -322,11 +327,12 @@ hr{
 #visitors{
   background-color: white;
   width: 100%;
-  height: 100px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
+  
 }
 
 #bring-popup:focus #user-info {
