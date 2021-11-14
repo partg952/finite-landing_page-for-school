@@ -73,11 +73,12 @@ let cancel_button = document.getElementById("cancel-button");
 
 window.onload = () =>{
   axios("https://finite-api.herokuapp.com/get-count").then(res=>{
-  console.log(res.data);
+  console.log(res.data[res.data.length-1].count+1);
   document.getElementById("visitors-text").textContent = "Number of people visited the site: "+res.data[res.data.length-1].count;
   if(localStorage.getItem('first_visit')==undefined){
     localStorage.setItem("first_visit",true);
-    axios("https://finite-api.herokuapp.com/increase-count?num="+res.data[res.data.length-1].count+1).then(response=>{
+    let num = res.data[res.data.length-1].count+1
+    axios("https://finite-api.herokuapp.com/increase-count?num="+num).then(response=>{
       console.log(response.data);
     })
   }
