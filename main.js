@@ -79,15 +79,21 @@ cancel_button.addEventListener('click',()=>{
 
 form.addEventListener('submit',(e)=>{
   e.preventDefault();
-  axios.post("https://finite-api.herokuapp.com/add-user",{
-    name:e.target.name.value,
-    email:e.target.email.value.replace("@gmail.com",""),
-    phone:e.target.number.value,
-    amount:e.target.amount.value
-  }).then(res=>{
-    console.log("posted")
-    message.textContent = 'Your Info Has Been Posted';
-  })
+  if(e.target.name.value.length!=0 && e.target.email.value.length!=0 && e.target.number.value.length!=0 && e.target.amount.value.length!=0){
+
+    axios.post("https://finite-api.herokuapp.com/add-user",{
+      name:e.target.name.value,
+      email:e.target.email.value.replace("@gmail.com",""),
+      phone:e.target.number.value,
+      amount:e.target.amount.value
+    }).then(res=>{
+      console.log("posted")
+      user_div.style.transform = 'translateY(-600px)'
+    })
+  }
+  else{
+    alert("Please Enter Complete Info")
+  }
 })
 window.onscroll = () =>{
   if(window.scrollY >= 20){
