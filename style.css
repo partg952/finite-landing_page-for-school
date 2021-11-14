@@ -1,5 +1,5 @@
 body{
-  background-color: #FDFF00;
+  background-color: #ffff40;
   font-family: 'Fira Sans', sans-serif;
   user-select: none;
   z-index: 1;
@@ -27,32 +27,30 @@ html{
   width: 100%;
   /* background-color: yellow; */
   transition: all 200ms ease;
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   align-items: center;
   justify-content: space-between;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-#parent-nav{
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-}
 
-#parent-nav #navbar ul {
+
+ #navbar ul {
   display: flex;
   list-style: none;
   align-items: center;
   justify-content: space-between;
   
 }
-#parent-nav #navbar ul a{
+ #navbar ul a{
   color: black;
   text-decoration: none;
   
 }
-#parent-nav #navbar ul li {
+ #navbar ul li {
   background-color: transparent;
   position: relative;
   border-radius: 6px;
@@ -62,11 +60,11 @@ html{
   overflow: hidden;
 
 }
-#parent-nav #navbar ul li:hover  > span {
+ #navbar ul li:hover  > span {
   transform: translateY(-33px) translateX(0px);
   visibility: visible;
 }
-#parent-nav #navbar ul li span{
+ #navbar ul li span{
   z-index: -999;
   transition: all 200ms ease;
   background-color: orange;
@@ -80,10 +78,10 @@ html{
   left: 0;
   right: 0;
 }
-#parent-nav #navbar ul a:hover{
+ #navbar ul a:hover{
   text-decoration: underline;
 }
-#parent-nav #navbar h1{
+ #navbar h1{
   font-size: 50px;
   padding: 0;
   transition: all 200ms ease;
@@ -91,7 +89,7 @@ html{
   font-family: 'Rubik', sans-serif;
   color: orange;
 }
-#parent-nav #navbar p{
+ #navbar p{
 margin-top: -10px;
 padding: 5px;
 color: orange;
@@ -204,7 +202,7 @@ div.quotes img{
   margin: 10px;
 }
 @media only screen and (max-width: 1095px){
-#parent-nav	#navbar ul{
+	#navbar ul{
     display: block;
     position: fixed;
     left: 0;
@@ -218,17 +216,17 @@ div.quotes img{
     transition: all 200ms ease;
     text-align: center;
   }
- #parent-nav #navbar ul li,button{
+ #navbar ul li,button{
 margin-left: -30px;
  }
   
   #open-menu{
     display:block;
   }
-  #parent-nav #navbar #open-menu:focus ~ ul{
+ #navbar #open-menu:focus ~ ul{
    transform: translateX(0px);
    }
-  #parent-nav #navbar{
+ #navbar{
      width: 99.2%;
    }
    div#first-section span h1{
@@ -342,4 +340,24 @@ hr{
   background-color: transparent;
   border: 0;
   outline: none;
+}
+footer{
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  height: min-content;
+  margin-bottom: -15px;
+}
+
+footer #contacts{
+  /* padding: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer #contacts img{
+  height: 50px;
+  width: 50px;
+  margin: 10px;
 }

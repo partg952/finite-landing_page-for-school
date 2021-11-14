@@ -126,11 +126,16 @@ window.onscroll = () =>{
    navbar.classList.add("nav-colored")
    navbar.classList.remove("nav-transparent")
     heading.style.transform = 'scale(0.8)'
+    heading.style.color = 'black';
+    document.getElementById('subtext').style.color = 'black';
   }
   else{
     navbar.classList.remove("nav-colored")
     navbar.classList.add("nav-transparent")
     heading.style.transform = 'scale(1)'
+    heading.style.color = 'orange';
+    document.getElementById('subtext').style.color = 'orange';
+
   }
 }
 stocks_data.forEach(items=>{
@@ -154,6 +159,6 @@ function gotopage(e){
 
 
 
-document.getElementById("bring-popup").onfocus = () =>{
+document.getElementById("bring-popup").onclick = () =>{
   user_div.style.transform = 'translate(0)';
 }
