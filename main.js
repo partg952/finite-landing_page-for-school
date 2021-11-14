@@ -72,12 +72,12 @@ let user_div = document.getElementById("user-info")
 let cancel_button = document.getElementById("cancel-button");
 
 window.onload = () =>{
-  axios("http://finite-api.herokuapp.com/get-count").then(res=>{
+  axios("https://finite-api.herokuapp.com/get-count").then(res=>{
   console.log(res.data);
   document.getElementById("visitors-text").textContent = "Number of people visited the site: "+res.data[res.data.length-1].count;
   if(localStorage.getItem('first_visit')==undefined){
     localStorage.setItem("first_visit",true);
-    axios("http://finite-api.herokuapp.com/increase-count?num="+res.data[res.data.length-1].count+1).then(response=>{
+    axios("https://finite-api.herokuapp.com/increase-count?num="+res.data[res.data.length-1].count+1).then(response=>{
       console.log(response.data);
     })
   }
