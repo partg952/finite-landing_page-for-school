@@ -146,3 +146,8 @@ function gotopage(e){
   window.location.href = 'stocks.html';
 }
 
+
+
+document.getElementById("bring-popup").onclick = () =>{
+  user_div.style.transform = 'translateY(0px)';
+}

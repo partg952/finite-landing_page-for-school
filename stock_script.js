@@ -14,7 +14,7 @@ function changeColor(string){
     if(string.includes("+")){
         return "green";
     }
-    else if("-"){
+    else if(string.includes("-")){
         return "red";
     }
 }
